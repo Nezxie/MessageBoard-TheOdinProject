@@ -4,8 +4,17 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="flex items-center flex-col">
+    <div class="max-w-4xl w-3/5 my-6">
+    <h1 class="text-4xl text-pink-500"><%= title %></h1>
+    <% for(mess of messages){ %>
+      <div class="bg-pink-100 p-8 rounded-md border-4 border-pink-500 font-sans m-4">
+      <p class="text-sm font-semibold"><%= mess.user %> says:</p>
+      <p class="text-lg font-medium"><%= mess.text %></p>
+      <p class="text-sm italic font-light">Posted on <%= mess.added.toDateString() %></p>
+    </div>
+
+      <% }; %>
+    </div>
   </body>
 </html>

@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart":"nodemon ./bin/www",
-    "first-start": "SET DEBUG=top-message-board:*; npm start"
+    "devstart": "npm run build:css && nodemon ./bin/www",
+    "first-start": "SET DEBUG=top-message-board:*; npm start",
+    "build:css":"npx tailwindcss -i ./public/stylesheets/tailwind.css -o ./public/stylesheets/style.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,5 +15,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }
