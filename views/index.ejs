@@ -4,11 +4,11 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body class="flex items-center flex-col">
+  <body class="flex items-center flex-col bg-[url('../images/forest.gif')] bg-no-repeat bg-cover bg-center bg-blend-multiply bg-black/60">
     <div class="max-w-4xl w-3/5 my-6">
-    <h1 class="text-4xl text-pink-500"><%= title %></h1>
+    <h1 class="text-4xl text-orange-500"><%= title %></h1>
     <% for(mess of messages){ %>
-      <div class="bg-pink-100 p-8 rounded-md border-4 border-pink-500 font-sans m-4">
+      <div class="bg-orange-100 p-8 rounded-md border-4 border-orange-500 font-sans m-4">
       <p class="text-sm font-semibold"><%= mess.user %> says:</p>
       <p class="text-lg font-medium"><%= mess.text %></p>
       <p class="text-sm italic font-light">Posted on <%= mess.added.toDateString() %></p>
@@ -16,5 +16,7 @@
 
       <% }; %>
     </div>
+    <a href="/new" class="bg-orange-500 px-4 py-2 rounded-md border-2 border-orange-500 font-sans font-semibold text-orange-50 text-lg hover:bg-orange-50 hover:text-orange-500 mb-6">Add own message!</a>
+    <div class="justify-self-end mb-2 text-gray-300">Background GIF by user <a href="https://pixabay.com/pl/users/raniramli-731298/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=3463">press 👍 and ⭐</a> from <a href="https://pixabay.com/pl//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=3463">Pixabay</a></div>
   </body>
 </html>

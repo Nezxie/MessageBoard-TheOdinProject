@@ -18,5 +18,16 @@ const messages = [
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Message board', messages });
 });
+router.get('/new', function(req, res, next) {
+  res.render('form', {title: 'Send new message'});
+});
+router.post('/new', function(req, res, next) {
+  messages.push({
+    text: req.body.message,
+    user: req.body.name,
+    added: new Date()
+  });
+  res.redirect('/');
+});
 
 module.exports = router;
